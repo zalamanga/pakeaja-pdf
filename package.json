@@ -1,0 +1,9 @@
+{
+  "name": "pakeaja-pdf",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "25 alat PDF lokal di browser dengan pustaka vendor yang dipin.",
+  "engines": { "node": ">=22.13" },
+  "scripts": { "build": "node scripts/build.mjs", "serve": "node scripts/serve.mjs", "test": "node --test --test-concurrency=1" }
+}

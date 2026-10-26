@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#245df5">
+  <meta name="description" content="25 alat PDF di browser: susun halaman, konversi teks dan gambar, serta atur proteksi dokumen.">
+  <title>PakeAjaPDF: Alat untuk dokumenmu</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#alat">Lewati ke alat PDF</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="PakeAjaPDF beranda"><img src="./favicon.svg" width="40" height="40" alt=""><span>PakeAja<strong>PDF</strong></span></a>
+    <nav aria-label="Navigasi utama"><a href="#alat">Semua alat</a><a href="#cara">Cara kerja</a></nav>
+  </header>
+  <main>
+    <section class="intro wrap">
+      <p class="eyebrow">DOKUMEN SEHARI-HARI</p>
+      <h1>Alat PDF, sesuai kebutuhanmu.</h1>
+      <p>Susun halaman, ambil teks, ubah gambar, atau atur kata sandi. File diproses di browser; aplikasi ini tidak menyediakan unggahan dokumen ke server.</p>
+      <p class="limits">Maksimal 25 MiB per file, 50 MiB per pekerjaan, dan 200 halaman. Batas lain mengikuti alat yang dipilih.</p>
+    </section>
+    <section class="wrap tools" id="alat" aria-labelledby="tools-title">
+      <div class="tools-heading"><h2 id="tools-title">Pilih alat PDF</h2><label class="search">Cari alat<input id="search" type="search" placeholder="Misalnya gabungkan, gambar, kata sandi" autocomplete="off" disabled></label></div>
+      <div id="startup" class="notice" role="status"><p>Menyiapkan alat PDF. Jika daftar belum muncul, periksa JavaScript dan akses berkas aplikasi lalu <a href="./">muat ulang halaman</a>.</p></div>
+      <noscript><p class="notice">Alat PDF memerlukan JavaScript. Tidak ada dokumen yang diproses saat JavaScript mati.</p></noscript>
+      <div id="categories" class="categories" role="group" aria-label="Kategori alat"></div>
+      <div id="catalog"></div><p id="empty" hidden>Tidak ada alat yang cocok. Ganti kata kunci atau pilih Semua alat.</p>
+    </section>
+    <section id="cara" class="how wrap" aria-labelledby="how-title">
+      <h2 id="how-title">Cara kerja</h2>
+      <ol><li><strong>Pilih alat dan file.</strong> Susunan file menentukan urutan hasil.</li><li><strong>Periksa pengaturan.</strong> Keterangan alat menjelaskan batas dan perubahan pada isi.</li><li><strong>Proses, periksa, lalu unduh.</strong> File sumber tidak ditimpa. Membuka atau menyimpan hasil mengikuti pengaturan browser.</li></ol>
+      <p>Konversi teks memerlukan tulisan yang dapat dipilih. Tanda tangan berupa teks visual; crop mengubah batas tampilan dan tidak menghapus informasi tersembunyi.</p>
+    </section>
+  </main>
+  <footer class="wrap">PakeAjaPDF · Pemrosesan lokal di browser · <a href="./THIRD_PARTY_LICENSES.md">Lisensi pustaka</a></footer>
+  <dialog id="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <div class="dialog-heading"><div><p id="dialog-category" class="eyebrow"></p><h2 id="dialog-title"></h2></div><button id="close" type="button">Tutup</button></div>
+    <p id="dialog-description"></p>
+    <fieldset id="controls" disabled>
+      <legend class="sr-only">File dan pengaturan alat</legend>
+      <div id="dropzone" class="dropzone"><label class="button primary" for="files">Pilih file</label><input id="files" type="file" class="file-input"><p>Atau seret file ke area ini.</p><p id="file-hint" class="muted"></p></div>
+      <ol id="file-list" class="file-list" aria-label="Urutan file"></ol>
+      <div id="options" class="options"></div>
+      <section id="organizer" hidden aria-labelledby="organizer-title"><div class="organizer-heading"><h3 id="organizer-title">Urutan halaman</h3><button id="preview" type="button">Baca pratinjau halaman</button></div><p class="muted">Setiap halaman harus tetap ada satu kali. Gunakan Naik/Turun atau seret kartunya.</p><ol id="page-list" class="page-list" aria-label="Urutan halaman hasil"></ol></section>
+      <button id="process" type="button" class="primary">Proses file</button>
+    </fieldset>
+    <button id="cancel" type="button" hidden>Batalkan proses</button>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <p id="error" class="error" role="alert" hidden></p>
+    <section id="result" class="result" hidden aria-labelledby="result-title"><h3 id="result-title">Hasil untuk pengaturan ini</h3><p id="result-name"></p><p id="result-size"></p><ul id="result-notes"></ul><button id="download" type="button" class="primary">Unduh hasil</button></section>
+  </dialog>
+</body>
+</html>

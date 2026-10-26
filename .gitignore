@@ -1,0 +1,11 @@
+dist/
+.build-stage-*/
+.build-backup-*/
+.build.lock
+node_modules/
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+coverage/
